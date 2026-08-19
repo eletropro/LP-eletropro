@@ -1,7 +1,6 @@
 import React from 'react';
 import { COMPANY_INFO, createWhatsAppUrl } from '../data/content';
-import { ORIGINAL_IMAGE_PATHS } from '../data/images';
-import { ImageWithFallback } from './ImageWithFallback';
+import { USER_PHOTOS } from '../data/images';
 import { ShieldCheck, Zap, MessageSquare, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -73,16 +72,13 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Coluna Visual: Foto da Obra Real da EletroPRO */}
+          {/* Coluna Visual: Foto Real do Wallbox GWM da EletroPRO */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
               <div className="aspect-[3/4] sm:aspect-[4/5] max-h-[460px] w-full overflow-hidden bg-slate-950 flex items-center justify-center">
-                <ImageWithFallback
-                  src={ORIGINAL_IMAGE_PATHS.wallboxGwm}
+                <img
+                  src={USER_PHOTOS.wallboxGwm}
                   alt="Instalação de Wallbox GWM em Brasília pela EletroPRO"
-                  storageKey="wallbox_gwm"
-                  fallbackLabel="Foto: Wallbox GWM na Garagem"
-                  subLabel="Instalação com mini quadro de proteção dedicado"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                 />
               </div>
@@ -95,7 +91,7 @@ export const Hero: React.FC = () => {
 
               <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
                 <div>
-                  <div className="font-bold text-white">Wallbox GWM + Quadro Dedicado</div>
+                  <div className="font-bold text-white">Wallbox GWM + Mini Quadro Dedicado</div>
                   <div className="text-[11px] text-slate-400">Proteção com DPS Clamper e Dispositivo DR</div>
                 </div>
                 <span className="text-[10px] bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 px-2 py-0.5 rounded font-bold uppercase">

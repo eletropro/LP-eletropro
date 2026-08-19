@@ -1,7 +1,6 @@
 import React from 'react';
 import { createWhatsAppUrl } from '../data/content';
-import { ORIGINAL_IMAGE_PATHS } from '../data/images';
-import { ImageWithFallback } from './ImageWithFallback';
+import { USER_PHOTOS } from '../data/images';
 import { ShieldCheck, CheckCircle2, ArrowRight, MessageSquare, Camera } from 'lucide-react';
 
 export const QDCBeforeAfterSection: React.FC = () => {
@@ -33,12 +32,9 @@ export const QDCBeforeAfterSection: React.FC = () => {
             <div>
               {/* Foto Real Antes */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <ImageWithFallback
-                  src={ORIGINAL_IMAGE_PATHS.qdcAntes}
+                <img
+                  src={USER_PHOTOS.qdcAntes}
                   alt="Quadro de Distribuição antigo com fiação exposta e disjuntores NEMA"
-                  storageKey="qdc_antes"
-                  fallbackLabel="Foto: QDC Antigo (Antes)"
-                  subLabel="Disjuntores NEMA e fiação sem terminais"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-md uppercase tracking-wider shadow-md">
@@ -78,12 +74,9 @@ export const QDCBeforeAfterSection: React.FC = () => {
             <div>
               {/* Foto Real Depois */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <ImageWithFallback
-                  src={ORIGINAL_IMAGE_PATHS.qdcDepois}
+                <img
+                  src={USER_PHOTOS.qdcDepois}
                   alt="Quadro de Distribuição de Circuitos QDC reformado pela EletroPRO no padrão NBR 5410"
-                  storageKey="qdc_depois"
-                  fallbackLabel="Foto: QDC Reformado (Depois)"
-                  subLabel="Disjuntores Steck DIN e barramentos identificados"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-md uppercase tracking-wider shadow-md">
