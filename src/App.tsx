@@ -4,7 +4,7 @@ import { Hero } from './components/Hero';
 import { HowItWorks } from './components/HowItWorks';
 import { ServicesGrid } from './components/ServicesGrid';
 import { QDCBeforeAfterSection } from './components/QDCBeforeAfterSection';
-import { RealWorksGallery } from './components/RealWorksGallery';
+import { CleanPhotoGallery } from './components/CleanPhotoGallery';
 import { BudgetSimulator } from './components/BudgetSimulator';
 import { LocationsSection } from './components/LocationsSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -24,7 +24,7 @@ export default function App() {
         <HowItWorks />
         <ServicesGrid />
         <QDCBeforeAfterSection />
-        <RealWorksGallery />
+        <CleanPhotoGallery />
         <BudgetSimulator />
         <LocationsSection />
         <TestimonialsSection />

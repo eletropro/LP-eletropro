@@ -17,7 +17,8 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { label: 'Serviços', href: '#servicos' },
-    { label: 'Antes e Depois (QDC)', href: '#antes-depois' },
+    { label: 'Quadro (QDC)', href: '#antes-depois' },
+    { label: 'Fotos Reais', href: '#galeria' },
     { label: 'Orçamento WhatsApp', href: '#simulador' },
     { label: 'Regiões no DF', href: '#regioes' },
     { label: 'Dúvidas Frequentes', href: '#duvidas' },
