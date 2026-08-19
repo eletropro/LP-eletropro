@@ -1,10 +1,8 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { TrustBar } from './components/TrustBar';
 import { ServicesGrid } from './components/ServicesGrid';
 import { QDCBeforeAfterSection } from './components/QDCBeforeAfterSection';
-import { WallboxSection } from './components/WallboxSection';
 import { BudgetSimulator } from './components/BudgetSimulator';
 import { LocationsSection } from './components/LocationsSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -18,13 +16,11 @@ export default function App() {
       {/* Cabeçalho */}
       <Header />
 
-      {/* Conteúdo Principal Otimizado para Leads */}
+      {/* Conteúdo Principal Otimizado no Padrão Loopii */}
       <main className="flex-1">
         <Hero />
-        <TrustBar />
         <ServicesGrid />
         <QDCBeforeAfterSection />
-        <WallboxSection />
         <BudgetSimulator />
         <LocationsSection />
         <TestimonialsSection />

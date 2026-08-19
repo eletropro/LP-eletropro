@@ -4,7 +4,7 @@ import { MapPin, MessageSquare } from 'lucide-react';
 
 export const LocationsSection: React.FC = () => {
   return (
-    <section className="py-14 md:py-18 bg-slate-950 border-b border-slate-800 relative">
+    <section id="regioes" className="py-14 md:py-18 bg-slate-950 border-b border-slate-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">

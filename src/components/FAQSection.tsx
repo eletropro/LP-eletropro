@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FAQ_ITEMS, COMPANY_INFO, createWhatsAppUrl } from '../data/content';
+import { createWhatsAppUrl } from '../data/content';
 import { HelpCircle, ChevronDown, MessageSquare } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
@@ -9,36 +9,51 @@ export const FAQSection: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqs = [
+    {
+      q: "O condomínio pode proibir a instalação do carregador veicular na minha vaga?",
+      a: "Não, desde que a instalação respeite as normas técnicas (NBR 5410 e NBR 17019), utilize disjuntores e DPS/DR dedicados e seja acompanhada pela Anotação de Responsabilidade Técnica (ART) e Memorial Descritivo assinados por profissional habilitado. Nós entregamos toda a documentação pronta para o seu síndico."
+    },
+    {
+      q: "Por que não posso carregar meu carro elétrico em uma tomada comum?",
+      a: "Tomadas comuns de 10A ou 20A não suportam a passagem contínua de alta amperagem durante 8 a 15 horas. Isso derrete tomadas, superaquece os condutores embutidos e gera risco iminente de curto-circuito e incêndio. O Wallbox com circuito exclusivo carrega até 4x mais rápido com 100% de segurança."
+    },
+    {
+      q: "O que é a ART e por que ela é obrigatória?",
+      a: "A ART (Anotação de Responsabilidade Técnica) é o documento oficial perante a lei que valida que a obra foi executada por responsável técnico qualificado. Ela garante a segurança do condomínio e é indispensável para acionar seguros prediais ou residenciais."
+    },
+    {
+      q: "Como faço para receber um orçamento?",
+      a: "Basta clicar em qualquer botão de WhatsApp nesta página ou ligar para (61) 99351-0110. Você pode enviar a foto do seu quadro de luz atual ou do local da garagem para uma estimativa rápida e agendamento de vistoria."
+    }
+  ];
+
   return (
-    <section id="duvidas" className="py-14 md:py-20 bg-slate-950 border-b border-slate-800 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="duvidas" className="py-12 sm:py-16 bg-slate-950 border-b border-slate-800/80 relative">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Cabeçalho */}
-        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <div className="text-center space-y-2 mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold rounded-full">
             <HelpCircle className="w-3.5 h-3.5" />
-            <span>Tire Suas Dúvidas</span>
+            <span>Dúvidas Frequentes</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-['Outfit',sans-serif]">
             Perguntas <span className="text-yellow-400">Frequentes</span>
           </h2>
-
-          <p className="text-slate-400 text-xs sm:text-sm">
-            Esclarecimentos sobre normas técnicas, ART, Wallbox e condomínios em Brasília.
-          </p>
         </div>
 
-        {/* Lista Sanfonada (Accordion) */}
+        {/* Accordion Limpo */}
         <div className="space-y-3">
-          {FAQ_ITEMS.map((item, idx) => {
+          {faqs.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
                 className={`border rounded-xl transition-all duration-150 overflow-hidden ${
                   isOpen
-                    ? 'bg-slate-900 border-yellow-400/40 shadow-lg'
+                    ? 'bg-slate-900 border-yellow-400/40 shadow-md'
                     : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
                 }`}
               >
@@ -64,21 +79,16 @@ export const FAQSection: React.FC = () => {
           })}
         </div>
 
-        {/* Ainda tem dúvidas? */}
-        <div className="mt-8 p-5 bg-slate-900 border border-slate-800 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div>
-            <div className="text-sm font-bold text-white">Ainda tem alguma dúvida específica sobre o seu projeto?</div>
-            <div className="text-xs text-slate-400">Fale diretamente com o profissional técnico pelo WhatsApp.</div>
-          </div>
-          
+        {/* CTA direto no rodapé do FAQ */}
+        <div className="mt-8 text-center">
           <a
-            href={createWhatsAppUrl("Olá! Tenho uma dúvida sobre instalação de Wallbox/quadro elétrico.")}
+            href={createWhatsAppUrl("Olá! Tenho uma dúvida sobre instalação de Wallbox / Elétrica em Brasília.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-slate-950 text-xs font-extrabold uppercase rounded-lg transition-all shrink-0 shadow-md"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-yellow-400 text-slate-300 hover:text-slate-950 border border-slate-800 text-xs font-bold uppercase rounded-xl transition-all"
           >
-            <MessageSquare className="w-4 h-4 fill-slate-950" />
-            <span>Tirar Dúvida no WhatsApp</span>
+            <MessageSquare className="w-4 h-4 text-yellow-400" />
+            <span>Falar com o técnico no WhatsApp</span>
           </a>
         </div>
 

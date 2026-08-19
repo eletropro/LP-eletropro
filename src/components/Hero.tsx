@@ -1,184 +1,103 @@
-import React, { useState } from 'react';
-import { COMPANY_INFO, createWhatsAppUrl, COVERAGE_AREAS } from '../data/content';
-import { APP_IMAGES } from '../data/images';
-import { ShieldCheck, Zap, MessageSquare, CheckCircle2, Star, ArrowRight, PhoneCall, Send, FileCheck } from 'lucide-react';
+import React from 'react';
+import { COMPANY_INFO, createWhatsAppUrl } from '../data/content';
+import { ShieldCheck, Zap, MessageSquare, CheckCircle2, Phone, Star, ArrowRight, FileCheck } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const [service, setService] = useState('Instalação de Wallbox');
-  const [location, setLocation] = useState('Plano Piloto / Lago Sul / Sudoeste');
-
-  const handleQuickLead = (e: React.FormEvent) => {
-    e.preventDefault();
-    const msg = `*SOLICITAÇÃO DE ORÇAMENTO RÁPIDO* ⚡\n\n` +
-      `📌 *Serviço:* ${service}\n` +
-      `📍 *Região em Brasília:* ${location}\n\n` +
-      `Olá! Gostaria de receber um orçamento sem compromisso e tirar dúvidas com o eletricista técnico.`;
-    window.open(createWhatsAppUrl(msg), '_blank');
-  };
-
   return (
-    <section className="relative bg-slate-950 border-b border-slate-800 py-8 sm:py-12 lg:py-16 overflow-hidden">
-      {/* Luz de fundo sutil */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-yellow-400/5 blur-3xl pointer-events-none -z-10" />
+    <section className="relative bg-slate-950 py-12 sm:py-16 lg:py-20 border-b border-slate-800/80 overflow-hidden">
+      {/* Glow suave e sutil de fundo estilo Loopii */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-yellow-400/5 blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          
-          {/* Coluna Esquerda: Texto Direto e Chamadas Rápidas (7 colunas) */}
-          <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-            
-            {/* Tag de Destaque */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold rounded-full">
-              <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-              <span>Atendimento em Brasília e todo o DF • Resposta Rápida</span>
-            </div>
-
-            {/* Título Principal de Alta Conversão */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white tracking-tight leading-tight font-['Outfit',sans-serif]">
-              Eletricista Especialista em <br className="hidden sm:inline" />
-              <span className="text-yellow-400">Wallbox, Quadros de Luz e ART</span> em Brasília
-            </h1>
-
-            {/* Subtítulo Curto e Prático */}
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Instalação segura de carregadores veiculares para <strong>BYD, GWM, Volvo, BMW</strong> e outras marcas com emissão de <strong>ART oficial para condomínios</strong> e modernização de quadros elétricos.
-            </p>
-
-            {/* 3 Benefícios Diretos */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
-              <div className="flex items-center gap-2 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-xs text-slate-200 font-semibold">Emissão de ART em 24h</span>
-              </div>
-              <div className="flex items-center gap-2 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-xs text-slate-200 font-semibold">Norma NBR 5410 & 17019</span>
-              </div>
-              <div className="flex items-center gap-2 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-xs text-slate-200 font-semibold">Orçamento sem Custo</span>
-              </div>
-            </div>
-
-            {/* Mini Formulário de Captura Rápida de Lead */}
-            <form onSubmit={handleQuickLead} className="p-4 bg-slate-900 border border-slate-800 rounded-2xl shadow-xl space-y-3">
-              <div className="text-xs font-bold text-slate-200 flex items-center justify-between">
-                <span className="flex items-center gap-1.5 text-yellow-400">
-                  <Zap className="w-3.5 h-3.5 fill-yellow-400" />
-                  Orçamento Rápido no WhatsApp:
-                </span>
-                <span className="text-[11px] text-slate-400 font-normal">Sem compromisso</span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div>
-                  <label className="block text-[11px] text-slate-400 font-medium mb-1">Qual serviço você precisa?</label>
-                  <select
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-700 text-white rounded-lg p-2.5 text-xs focus:border-yellow-400 focus:outline-none"
-                  >
-                    <option value="Instalação de Wallbox em Condomínio (com ART)">Instalação de Wallbox em Condomínio (com ART)</option>
-                    <option value="Instalação de Wallbox em Casa">Instalação de Wallbox em Casa</option>
-                    <option value="Reforma de Quadro de Luz (QDC)">Reforma de Quadro de Luz (QDC)</option>
-                    <option value="Emissão de ART e Laudo Técnico">Emissão de ART e Laudo Técnico</option>
-                    <option value="Padrão Neoenergia e Outros Serviços">Padrão Neoenergia e Outros Serviços</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[11px] text-slate-400 font-medium mb-1">Sua Região no DF:</label>
-                  <select
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-700 text-white rounded-lg p-2.5 text-xs focus:border-yellow-400 focus:outline-none"
-                  >
-                    <option value="Plano Piloto (Asa Sul / Asa Norte)">Plano Piloto (Asa Sul / Asa Norte)</option>
-                    <option value="Lago Sul / Lago Norte / Mansões">Lago Sul / Lago Norte / Mansões</option>
-                    <option value="Sudoeste / Noroeste / Cruzeiro">Sudoeste / Noroeste / Cruzeiro</option>
-                    <option value="Águas Claras / Park Way">Águas Claras / Park Way</option>
-                    <option value="Jardim Botânico / Alphaville">Jardim Botânico / Alphaville</option>
-                    <option value="Outra Região do DF">Outra Região do DF</option>
-                  </select>
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wide rounded-xl shadow-lg shadow-yellow-400/20 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"
-              >
-                <MessageSquare className="w-4 h-4 fill-slate-950" />
-                <span>Solicitar Orçamento no WhatsApp Agora</span>
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </form>
-
-            {/* Avaliação e Contato Direto */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400">
-              <div className="flex items-center gap-1 text-yellow-400">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="font-bold text-white ml-1">5.0</span>
-                <span className="text-slate-400">(Brasília - DF)</span>
-              </div>
-              <span className="text-slate-700">•</span>
-              <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="text-slate-300 hover:text-yellow-400 font-semibold flex items-center gap-1">
-                <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{COMPANY_INFO.formattedPhone}</span>
-              </a>
-            </div>
-
-          </div>
-
-          {/* Coluna Direita: Imagem Real de Instalação com Selos Práticos (5 colunas) */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
-              {/* Imagem Real de Instalação de WallBox */}
-              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <img
-                  src={APP_IMAGES.wallbox}
-                  alt="Instalação de Wallbox Carregador Veicular em Brasília pela EletroPRO"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              {/* Tag Flutuante no Topo da Imagem */}
-              <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-sm border border-slate-800 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg">
-                <ShieldCheck className="w-4 h-4 text-yellow-400" />
-                <span>Obra Real Entregue em Brasília</span>
-              </div>
-
-              {/* Legenda Prática Inferior */}
-              <div className="p-4 bg-slate-900 border-t border-slate-800 space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xs sm:text-sm font-bold text-white">Instalação de Wallbox com Quadro Dedicado</h3>
-                  <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-bold uppercase">
-                    ART Inclusa
-                  </span>
-                </div>
-                <p className="text-xs text-slate-400 leading-tight">
-                  Quadro com DPS Clamper, Dispositivo DR Tipo A e medidor de consumo em KWh aprovado por condomínios do DF.
-                </p>
-                <div className="pt-2 flex items-center justify-between text-[11px] text-yellow-400 font-bold border-t border-slate-800/80">
-                  <span>BYD • GWM • Volvo • BMW • Porsche</span>
-                  <a
-                    href={createWhatsAppUrl("Olá! Gostaria de um orçamento para instalar meu Wallbox em Brasília.")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline flex items-center gap-1 text-slate-200 hover:text-white"
-                  >
-                    <span>Orçar este serviço</span>
-                    <ArrowRight className="w-3 h-3 text-yellow-400" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+        
+        {/* Badge Minimalista */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold rounded-full">
+          <Zap className="w-3.5 h-3.5 fill-yellow-400" />
+          <span>Eletricista Especialista em Brasília e DF</span>
         </div>
+
+        {/* Título Principal Limpo e Direto */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-['Outfit',sans-serif] max-w-4xl mx-auto">
+          Instalação de <span className="text-yellow-400">Wallbox</span> e Serviços Elétricos com <span className="text-yellow-400">Emissão de ART</span>
+        </h1>
+
+        {/* Subtítulo Sem Poluição */}
+        <p className="text-slate-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          Carregadores veiculares para casas e condomínios, modernização de quadros de luz e laudos técnicos em todo o Distrito Federal.
+        </p>
+
+        {/* Botões de Ação Imediata (Estilo Loopii) */}
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto">
+          <a
+            href={createWhatsAppUrl("Olá! Gostaria de fazer um orçamento para instalação de Wallbox / Serviços Elétricos em Brasília.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold text-sm uppercase tracking-wide rounded-xl shadow-lg shadow-yellow-400/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+          >
+            <MessageSquare className="w-4 h-4 fill-slate-950" />
+            <span>Faça seu Orçamento</span>
+            <ArrowRight className="w-4 h-4 text-slate-950" />
+          </a>
+
+          <a
+            href={`tel:${COMPANY_INFO.phoneRaw}`}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white text-sm font-bold rounded-xl border border-slate-700 hover:border-yellow-400/40 transition-colors"
+          >
+            <Phone className="w-4 h-4 text-yellow-400" />
+            <span>(61) 99351-0110</span>
+          </a>
+        </div>
+
+        {/* 3 Selos de Confiança Limpos */}
+        <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
+          <div className="flex items-center gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-800/80">
+            <div className="w-8 h-8 rounded-lg bg-yellow-400/10 text-yellow-400 flex items-center justify-center shrink-0">
+              <FileCheck className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-white">ART Oficial Inclusa</div>
+              <div className="text-[11px] text-slate-400">Aprovado por síndicos</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-800/80">
+            <div className="w-8 h-8 rounded-lg bg-yellow-400/10 text-yellow-400 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-white">Normas NBR 5410 & 17019</div>
+              <div className="text-[11px] text-slate-400">Proteção DPS e DR</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-800/80">
+            <div className="w-8 h-8 rounded-lg bg-yellow-400/10 text-yellow-400 flex items-center justify-center shrink-0">
+              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-white">Atendimento Rápido</div>
+              <div className="text-[11px] text-slate-400">Todo o DF e Entorno</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Marcas de Carros em Faixa Discreta */}
+        <div className="pt-4">
+          <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            Compatível com todas as marcas:
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {['BYD', 'GWM Haval & Ora', 'Volvo', 'BMW', 'Porsche', 'Audi', 'Mercedes-Benz', 'WEG / ABB'].map((marca) => (
+              <span
+                key={marca}
+                className="px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-900/90 border border-slate-800 rounded-lg"
+              >
+                {marca}
+              </span>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
