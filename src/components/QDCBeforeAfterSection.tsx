@@ -1,7 +1,8 @@
 import React from 'react';
 import { createWhatsAppUrl } from '../data/content';
-import { USER_PHOTOS } from '../data/images';
-import { ShieldCheck, CheckCircle2, XCircle, ArrowRight, MessageSquare, Camera } from 'lucide-react';
+import { ORIGINAL_IMAGE_PATHS } from '../data/images';
+import { ImageWithFallback } from './ImageWithFallback';
+import { ShieldCheck, CheckCircle2, ArrowRight, MessageSquare, Camera } from 'lucide-react';
 
 export const QDCBeforeAfterSection: React.FC = () => {
   return (
@@ -20,21 +21,24 @@ export const QDCBeforeAfterSection: React.FC = () => {
           </h2>
 
           <p className="text-slate-400 text-xs sm:text-sm">
-            Confira a reforma real executada pela <strong>EletroPRO</strong> em Brasília, substituindo disjuntores antigos NEMA pelo padrão DIN Steck em conformidade com a norma <strong>NBR 5410</strong>:
+            Confira a reforma executada pela <strong>EletroPRO</strong> em Brasília, substituindo disjuntores antigos NEMA pelo padrão DIN Steck em conformidade com a norma <strong>NBR 5410</strong>:
           </p>
         </div>
 
-        {/* Comparativo Visual Real das Fotos do Usuário */}
+        {/* Comparativo Visual das Fotos Reais */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           
-          {/* Card Antes (com Foto Real) */}
+          {/* Card Antes */}
           <div className="bg-slate-900 border border-red-900/40 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
             <div>
               {/* Foto Real Antes */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <img
-                  src={USER_PHOTOS.qdcAntes}
+                <ImageWithFallback
+                  src={ORIGINAL_IMAGE_PATHS.qdcAntes}
                   alt="Quadro de Distribuição antigo com fiação exposta e disjuntores NEMA"
+                  storageKey="qdc_antes"
+                  fallbackLabel="Foto: QDC Antigo (Antes)"
+                  subLabel="Disjuntores NEMA e fiação sem terminais"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-md uppercase tracking-wider shadow-md">
@@ -69,14 +73,17 @@ export const QDCBeforeAfterSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Card Depois (com Foto Real) */}
+          {/* Card Depois */}
           <div className="bg-slate-900 border border-emerald-500/40 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between ring-1 ring-yellow-400/30">
             <div>
               {/* Foto Real Depois */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <img
-                  src={USER_PHOTOS.qdcDepois}
+                <ImageWithFallback
+                  src={ORIGINAL_IMAGE_PATHS.qdcDepois}
                   alt="Quadro de Distribuição de Circuitos QDC reformado pela EletroPRO no padrão NBR 5410"
+                  storageKey="qdc_depois"
+                  fallbackLabel="Foto: QDC Reformado (Depois)"
+                  subLabel="Disjuntores Steck DIN e barramentos identificados"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-md uppercase tracking-wider shadow-md">
@@ -107,7 +114,7 @@ export const QDCBeforeAfterSection: React.FC = () => {
             </div>
 
             <div className="p-4 bg-slate-950 border-t border-slate-800 text-[11px] text-emerald-400 font-medium">
-              ✓ 100% no padrão NBR 5410 com laudo técnico e garantia.
+              ✓ 100% no padrão NBR 5410 com segurança e garantia.
             </div>
           </div>
 

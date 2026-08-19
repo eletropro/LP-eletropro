@@ -41,7 +41,7 @@ export const MAIN_SERVICES: ServiceItem[] = [
     badge: "Especialidade Principal",
     iconName: "Zap",
     benefits: [
-      "Emissão de ART e Laudo para aprovação em condomínios",
+      "Opção de emissão de ART e Laudo para condomínio (sob demanda)",
       "Proteção total para o veículo contra picos e descargas atmosféricas",
       "Instalação residencial, prédios, vagas rotativas e frotas",
       "Compatível com BYD, GWM Haval/Ora, Volvo, BMW, Porsche, Audi e outros"
@@ -73,17 +73,17 @@ export const MAIN_SERVICES: ServiceItem[] = [
       "Disjuntores DIN Norma IEC 60898",
       "Balanceamento milimétrico de fases"
     ],
-    ctaText: "Orçar Quadro de Distribuição de Circuitos"
+    ctaText: "Orçar Reforma de QDC"
   },
   {
     id: "art-laudos",
     title: "Emissão de ART, Laudos Técnicos & Projetos",
-    shortDesc: "Documentação técnica oficial assinada por profissional habilitado exigida por condomínios, Neoenergia e seguradoras.",
+    shortDesc: "Documentação técnica oficial assinada por profissional habilitado exigida por condomínios, Neoenergia e seguradoras (serviço sob demanda).",
     fullDesc: "Elaboração de Anotação de Responsabilidade Técnica (ART), Memorial Descritivo de Carga, Laudo de Conformidade das Instalações e Projetos Elétricos completos para obras e reformas.",
     badge: "Documentação Oficial",
     iconName: "FileCheck",
     benefits: [
-      "Aprovação imediata na administração do condomínio",
+      "Aprovação rápida na administração do condomínio",
       "Respaldo jurídico e pericial para sua segurança",
       "Exigência de seguradoras para cobertura de sinistros",
       "Memorial de cálculo exato de demanda e potência"
@@ -132,13 +132,13 @@ export const TESTIMONIALS = [
   {
     name: "Dr. Rodrigo Alencar",
     car: "Proprietário BYD Seal - Lago Sul",
-    text: "Excelente atendimento da EletroPRO! Instalaram meu Wallbox com um quadro de proteção dedicado impecável e emitiram a ART no mesmo dia. A administração do condomínio aprovou sem nenhuma ressalva. Recomendo de olhos fechados.",
+    text: "Excelente atendimento da EletroPRO! Instalaram meu Wallbox com um quadro de proteção dedicado impecável. Solicitei a ART para apresentar no condomínio e foi emitida rapidamente. Recomendo de olhos fechados.",
     rating: 5
   },
   {
     name: "Mariana Fontes",
     car: "Proprietária GWM Haval H6 - Sudoeste",
-    text: "Contratei a EletroPRO para instalar o carregador Wallbox do meu GWM Haval H6 na garagem do condomínio e fazer a modernização do Quadro de Distribuição de Circuitos (QDC). O serviço foi rápido, limpo, seguro e a documentação com ART foi liberada na hora pelo síndico!",
+    text: "Contratei a EletroPRO para instalar o carregador Wallbox do meu GWM Haval H6 na garagem do condomínio e fazer a modernização do Quadro de Distribuição de Circuitos (QDC). O serviço foi rápido, limpo e seguro!",
     rating: 5
   },
   {
@@ -151,16 +151,16 @@ export const TESTIMONIALS = [
 
 export const FAQ_ITEMS = [
   {
+    q: "A ART já vem inclusa na instalação do Wallbox?",
+    a: "Não. A instalação elétrica é orçada separadamente e a emissão de ART (Anotação de Responsabilidade Técnica) é um serviço técnico opcional contratado à parte, caso o seu condomínio ou seguradora exijam o documento assinado por responsável habilitado."
+  },
+  {
     q: "Por que não posso carregar o carro elétrico em uma tomada comum da garagem?",
     a: "Tomadas residenciais comuns (10A ou 20A) não foram projetadas para suportar cargas contínuas de alta amperagem durante 8 a 20 horas consecutivas. Isso causa superaquecimento dos condutores, derretimento de plugues e alto risco de curto-circuito e incêndio. Um Wallbox com circuito dedicado e proteção DPS + DR garante recarga até 4x mais rápida com 100% de segurança."
   },
   {
     q: "O condomínio pode proibir a instalação do meu carregador veicular?",
-    a: "Não, desde que a instalação siga as normas técnicas (NBR 5410 e NBR 17019), utilize medidor de consumo individual e seja acompanhada por Anotação de Responsabilidade Técnica (ART) e Memorial Descritivo assinados por responsável técnico habilitado. Nós fornecemos todo o pacote documental pronto para o síndico."
-  },
-  {
-    q: "O que é a ART e por que ela é tão importante?",
-    a: "A ART (Anotação de Responsabilidade Técnica) é o documento legal que comprova a responsabilidade técnica do profissional perante o Conselho de Classe e a lei. Ela é exigida por condomínios, prefeituras, concessionária de energia e seguradoras para garantir a validade de apólices em caso de sinistros."
+    a: "Não, desde que a instalação siga as normas técnicas (NBR 5410 e NBR 17019), utilize medidor de consumo individual e, se exigido pelo síndico, seja acompanhada por Anotação de Responsabilidade Técnica (ART) e Memorial Descritivo assinados. Nós realizamos todo o serviço conforme a norma."
   },
   {
     q: "Qual a diferença do disjuntor moderno DIN para o antigo disjuntor preto (NEMA)?",
@@ -172,6 +172,6 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Como solicito um orçamento?",
-    a: "Basta clicar no botão de WhatsApp aqui na página ou ligar para (61) 99351-0110. Você pode nos enviar fotos do seu Quadro de Distribuição de Circuitos (QDC) atual ou do local da garagem para receber uma estimativa rápida e agendar a vistoria técnica gratuita."
+    a: "Basta clicar no botão de WhatsApp aqui na página ou ligar para (61) 99351-0110. Você pode nos enviar fotos do seu Quadro de Distribuição de Circuitos (QDC) atual ou do local da garagem para receber uma estimativa rápida e agendar a vistoria técnica."
   }
 ];

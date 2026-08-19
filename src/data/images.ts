@@ -1,13 +1,9 @@
-import wallboxGwmImg from '../assets/images/wallbox_gwm_real_1787104452841.jpg';
-import qdcAntesImg from '../assets/images/qdc_antes_real_1787104466752.jpg';
-import qdcDepoisImg from '../assets/images/qdc_depois_real_1787104482268.jpg';
-import totemGradeImg from '../assets/images/totem_grade_real_1787104498521.jpg';
-import padraoMedidoresImg from '../assets/images/padrao_medidores_real_1787104523150.jpg';
-
-export const USER_PHOTOS = {
-  wallboxGwm: wallboxGwmImg,
-  qdcAntes: qdcAntesImg,
-  qdcDepois: qdcDepoisImg,
-  totemGrade: totemGradeImg,
-  padraoMedidores: padraoMedidoresImg,
+// Caminhos padrão para as imagens originais do usuário na pasta public/images/
+// Quando você subir os seus arquivos de foto no GitHub, basta colocá-los na pasta public/images com estes nomes:
+export const ORIGINAL_IMAGE_PATHS = {
+  wallboxGwm: '/images/wallbox-gwm.jpg',
+  qdcAntes: '/images/qdc-antes.jpg',
+  qdcDepois: '/images/qdc-depois.jpg',
+  totemGrade: '/images/totem-grade.jpg',
+  padraoMedidores: '/images/padrao-medidores.jpg',
 };

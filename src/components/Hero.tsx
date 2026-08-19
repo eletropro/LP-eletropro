@@ -1,7 +1,8 @@
 import React from 'react';
 import { COMPANY_INFO, createWhatsAppUrl } from '../data/content';
-import { USER_PHOTOS } from '../data/images';
-import { ShieldCheck, Zap, MessageSquare, Phone, Star, ArrowRight, FileCheck, CheckCircle2 } from 'lucide-react';
+import { ORIGINAL_IMAGE_PATHS } from '../data/images';
+import { ImageWithFallback } from './ImageWithFallback';
+import { ShieldCheck, Zap, MessageSquare, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ export const Hero: React.FC = () => {
 
             {/* Subtítulo Sem Poluição */}
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Instalação de carregadores veiculares para <strong>GWM Haval, BYD, Volvo, BMW</strong> e modernização de Quadros de Distribuição com emissão de <strong>ART oficial</strong> para condomínios.
+              Instalação de carregadores veiculares para <strong>GWM Haval, BYD, Volvo, BMW</strong> e modernização de Quadros de Distribuição. <em>Emissão de ART e Laudo sob demanda com custo à parte</em>.
             </p>
 
             {/* Botões de Ação Imediata (Estilo Loopii) */}
@@ -58,7 +59,7 @@ export const Hero: React.FC = () => {
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-lg mx-auto lg:mx-0 text-left">
               <div className="flex items-center gap-2 bg-slate-900/90 p-2.5 rounded-xl border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-xs text-slate-200 font-semibold">ART Oficial em 24h</span>
+                <span className="text-xs text-slate-200 font-semibold">Opção de ART & Laudo</span>
               </div>
               <div className="flex items-center gap-2 bg-slate-900/90 p-2.5 rounded-xl border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -72,13 +73,16 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Coluna Visual: Foto Real do Wallbox GWM da EletroPRO (5 colunas) */}
+          {/* Coluna Visual: Foto da Obra Real da EletroPRO */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
               <div className="aspect-[3/4] sm:aspect-[4/5] max-h-[460px] w-full overflow-hidden bg-slate-950 flex items-center justify-center">
-                <img
-                  src={USER_PHOTOS.wallboxGwm}
-                  alt="Instalação real de Wallbox GWM em Brasília pela EletroPRO"
+                <ImageWithFallback
+                  src={ORIGINAL_IMAGE_PATHS.wallboxGwm}
+                  alt="Instalação de Wallbox GWM em Brasília pela EletroPRO"
+                  storageKey="wallbox_gwm"
+                  fallbackLabel="Foto: Wallbox GWM na Garagem"
+                  subLabel="Instalação com mini quadro de proteção dedicado"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                 />
               </div>
@@ -92,10 +96,10 @@ export const Hero: React.FC = () => {
               <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
                 <div>
                   <div className="font-bold text-white">Wallbox GWM + Quadro Dedicado</div>
-                  <div className="text-[11px] text-slate-400">Proteção DPS Clamper e Dispositivo DR</div>
+                  <div className="text-[11px] text-slate-400">Proteção com DPS Clamper e Dispositivo DR</div>
                 </div>
-                <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-bold uppercase">
-                  ART Inclusa
+                <span className="text-[10px] bg-yellow-400/20 text-yellow-400 border border-yellow-400/30 px-2 py-0.5 rounded font-bold uppercase">
+                  Sob Medida
                 </span>
               </div>
             </div>

@@ -3,8 +3,9 @@ import { COMPANY_INFO, createWhatsAppUrl, COVERAGE_AREAS } from '../data/content
 import { Calculator, MessageSquare, Send } from 'lucide-react';
 
 export const BudgetSimulator: React.FC = () => {
-  const [serviceType, setServiceType] = useState<string>('Instalação de Wallbox em Condomínio (com ART)');
-  const [neighborhood, setNeighborhood] = useState<string>('Plano Piloto / Lagos / Sudoeste');
+  const [serviceType, setServiceType] = useState<string>('Instalação de Wallbox');
+  const [artOption, setArtOption] = useState<string>('Sem ART');
+  const [neighborhood, setNeighborhood] = useState<string>('Plano Piloto (Asa Sul / Asa Norte)');
   const [notes, setNotes] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -12,9 +13,10 @@ export const BudgetSimulator: React.FC = () => {
 
     const message = `*SOLICITAÇÃO DE ORÇAMENTO - ELETROPRO* ⚡\n\n` +
       `📌 *Serviço:* ${serviceType}\n` +
+      `📄 *Opção de ART:* ${artOption}\n` +
       `📍 *Região em Brasília:* ${neighborhood}\n` +
       (notes.trim() ? `💬 *Observação:* ${notes.trim()}\n\n` : `\n`) +
-      `Olá! Gostaria de receber um orçamento sem compromisso e tirar dúvidas técnicas.`;
+      `Olá! Gostaria de receber um orçamento sem compromisso.`;
 
     const whatsappUrl = createWhatsAppUrl(message);
     window.open(whatsappUrl, '_blank');
@@ -53,12 +55,27 @@ export const BudgetSimulator: React.FC = () => {
                 onChange={(e) => setServiceType(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-700 focus:border-yellow-400 rounded-xl p-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-1 focus:ring-yellow-400 font-medium"
               >
-                <option value="Instalação de Wallbox em Condomínio (com ART inclusa)">🚗 Instalação de Wallbox em Condomínio (com ART inclusa)</option>
-                <option value="Instalação de Wallbox em Casa / Sobrado">⚡ Instalação de Wallbox em Casa / Sobrado</option>
+                <option value="Instalação de Wallbox em Garagem">🚗 Instalação de Wallbox em Garagem</option>
                 <option value="Reforma de Quadro de Distribuição de Circuitos (QDC)">🛡️ Reforma de Quadro de Distribuição de Circuitos (QDC)</option>
-                <option value="Emissão de ART e Laudo Técnico para Síndico">📄 Emissão de ART e Laudo Técnico para Síndico</option>
+                <option value="Emissão Avulsa de ART / Laudo Técnico">📄 Emissão Avulsa de ART / Laudo Técnico</option>
                 <option value="Padrão de Entrada Neoenergia & Aumento de Carga">🏢 Padrão de Entrada Neoenergia & Aumento de Carga</option>
                 <option value="Serviços de Elétrica em Geral / Manutenção">🔧 Serviços de Elétrica em Geral / Manutenção</option>
+              </select>
+            </div>
+
+            {/* ART Opcional */}
+            <div>
+              <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                Necessita de Emissão de ART (Anotação de Responsabilidade Técnica)? *
+              </label>
+              <select
+                value={artOption}
+                onChange={(e) => setArtOption(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-700 focus:border-yellow-400 rounded-xl p-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-1 focus:ring-yellow-400 font-medium"
+              >
+                <option value="Não preciso de ART (Apenas instalação padrão)">Não preciso de ART (Apenas instalação padrão)</option>
+                <option value="Sim, preciso de ART e Laudo para Condomínio (Custo à parte)">Sim, preciso de ART e Laudo para Condomínio (Custo à parte)</option>
+                <option value="Quero consultar o valor da ART">Quero consultar o valor da ART</option>
               </select>
             </div>
 
@@ -91,7 +108,7 @@ export const BudgetSimulator: React.FC = () => {
                 type="text"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Exemplo: Modelo do veículo, distância da garagem, etc."
+                placeholder="Exemplo: Haval H6, BYD Dolphin, distância da garagem, etc."
                 className="w-full bg-slate-950 border border-slate-700 focus:border-yellow-400 rounded-xl p-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-1 focus:ring-yellow-400 placeholder:text-slate-600 font-sans"
               />
             </div>

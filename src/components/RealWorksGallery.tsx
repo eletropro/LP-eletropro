@@ -1,24 +1,34 @@
 import React from 'react';
-import { USER_PHOTOS } from '../data/images';
+import { ORIGINAL_IMAGE_PATHS } from '../data/images';
+import { ImageWithFallback } from './ImageWithFallback';
 import { createWhatsAppUrl } from '../data/content';
-import { ShieldCheck, Camera, ArrowRight, MessageSquare } from 'lucide-react';
+import { Camera, ArrowRight, MessageSquare } from 'lucide-react';
 
 export const RealWorksGallery: React.FC = () => {
   const works = [
     {
-      img: USER_PHOTOS.wallboxGwm,
+      img: ORIGINAL_IMAGE_PATHS.wallboxGwm,
+      key: 'wallbox_gwm_galeria',
+      fallbackLabel: 'Wallbox GWM Haval',
+      subLabel: 'Quadro dedicado com DPS Clamper e DR',
       tag: 'Wallbox GWM Haval',
       title: 'Estação de Recarga em Garagem',
-      desc: 'Quadro dedicado com DPS Clamper e DR + ART oficial entregue ao síndico.'
+      desc: 'Quadro dedicado com DPS Clamper e DR para veículos elétricos e híbridos.'
     },
     {
-      img: USER_PHOTOS.totemGrade,
+      img: ORIGINAL_IMAGE_PATHS.totemGrade,
+      key: 'totem_grade_galeria',
+      fallbackLabel: 'Totem de Recarga com Grade',
+      subLabel: 'Proteção metálica pesada antivandalismo',
       tag: 'Totem de Recarga Comercial',
       title: 'Totem Antivandalismo com Grade',
       desc: 'Proteção metálica pesada para carregador veicular externo.'
     },
     {
-      img: USER_PHOTOS.padraoMedidores,
+      img: ORIGINAL_IMAGE_PATHS.padraoMedidores,
+      key: 'padrao_medidores_galeria',
+      fallbackLabel: 'Padrão Neoenergia',
+      subLabel: 'Centro de Medição Agrupada',
       tag: 'Padrão Neoenergia',
       title: 'Centro de Medição Agrupada',
       desc: 'Caixas de policarbonato transparentes com barramentos protegidos.'
@@ -40,7 +50,7 @@ export const RealWorksGallery: React.FC = () => {
             Instalações <span className="text-yellow-400">em Brasília</span>
           </h2>
           <p className="text-slate-400 text-xs sm:text-sm">
-            Fotos reais de obras e serviços executados com conformidade técnica.
+            Obras e serviços executados com conformidade técnica.
           </p>
         </div>
 
@@ -52,12 +62,15 @@ export const RealWorksGallery: React.FC = () => {
               className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl group hover:border-slate-700 transition-all flex flex-col justify-between"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                <img
+                <ImageWithFallback
                   src={work.img}
                   alt={work.title}
+                  storageKey={work.key}
+                  fallbackLabel={work.fallbackLabel}
+                  subLabel={work.subLabel}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-sm border border-slate-800 text-yellow-400 text-[11px] font-bold px-2.5 py-0.5 rounded-md">
+                <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-sm border border-slate-800 text-yellow-400 text-[11px] font-bold px-2.5 py-0.5 rounded-md pointer-events-none">
                   {work.tag}
                 </div>
               </div>
