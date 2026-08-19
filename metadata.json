@@ -1,0 +1,6 @@
+{
+  "name": "EletroPRO Brasília - Eletricista Especialista & WallBox",
+  "description": "Landing Page de alta conversão para EletroPRO: Eletricista em Brasília especialista em instalação de WallBox, carregadores veiculares elétricos, modernização de QDC, emissão de ART, laudos e projetos elétricos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
