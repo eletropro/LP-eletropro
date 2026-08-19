@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
               Brasília - DF
             </span>
             <span className="text-slate-300 font-medium text-xs hidden sm:inline">
-              Eletricista Especialista • Wallbox com ART • Quadros de Luz & Laudos
+              Eletricista Especialista • Wallbox com ART • Quadro de Distribuição de Circuitos (QDC) & Laudos
             </span>
           </div>
 

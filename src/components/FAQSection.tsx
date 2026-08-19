@@ -24,7 +24,7 @@ export const FAQSection: React.FC = () => {
     },
     {
       q: "Como faço para receber um orçamento?",
-      a: "Basta clicar em qualquer botão de WhatsApp nesta página ou ligar para (61) 99351-0110. Você pode enviar a foto do seu quadro de luz atual ou do local da garagem para uma estimativa rápida e agendamento de vistoria."
+      a: "Basta clicar em qualquer botão de WhatsApp nesta página ou ligar para (61) 99351-0110. Você pode enviar a foto do seu Quadro de Distribuição de Circuitos (QDC) atual ou do local da garagem para uma estimativa rápida e agendamento de vistoria."
     }
   ];
 

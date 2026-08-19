@@ -1,8 +1,10 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { HowItWorks } from './components/HowItWorks';
 import { ServicesGrid } from './components/ServicesGrid';
 import { QDCBeforeAfterSection } from './components/QDCBeforeAfterSection';
+import { RealWorksGallery } from './components/RealWorksGallery';
 import { BudgetSimulator } from './components/BudgetSimulator';
 import { LocationsSection } from './components/LocationsSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -19,8 +21,10 @@ export default function App() {
       {/* Conteúdo Principal Otimizado no Padrão Loopii */}
       <main className="flex-1">
         <Hero />
+        <HowItWorks />
         <ServicesGrid />
         <QDCBeforeAfterSection />
+        <RealWorksGallery />
         <BudgetSimulator />
         <LocationsSection />
         <TestimonialsSection />

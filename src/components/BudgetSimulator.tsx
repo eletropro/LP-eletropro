@@ -55,7 +55,7 @@ export const BudgetSimulator: React.FC = () => {
               >
                 <option value="Instalação de Wallbox em Condomínio (com ART inclusa)">🚗 Instalação de Wallbox em Condomínio (com ART inclusa)</option>
                 <option value="Instalação de Wallbox em Casa / Sobrado">⚡ Instalação de Wallbox em Casa / Sobrado</option>
-                <option value="Reforma de Quadro de Luz (QDC com DPS + DR)">🛡️ Reforma de Quadro de Luz (QDC com DPS + DR)</option>
+                <option value="Reforma de Quadro de Distribuição de Circuitos (QDC)">🛡️ Reforma de Quadro de Distribuição de Circuitos (QDC)</option>
                 <option value="Emissão de ART e Laudo Técnico para Síndico">📄 Emissão de ART e Laudo Técnico para Síndico</option>
                 <option value="Padrão de Entrada Neoenergia & Aumento de Carga">🏢 Padrão de Entrada Neoenergia & Aumento de Carga</option>
                 <option value="Serviços de Elétrica em Geral / Manutenção">🔧 Serviços de Elétrica em Geral / Manutenção</option>

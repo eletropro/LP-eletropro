@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Serviços Técnicos</h4>
             <ul className="space-y-2 text-xs font-medium">
               <li><a href="#wallbox" className="hover:text-yellow-400 transition-colors">Instalação de Wallbox e Totens</a></li>
-              <li><a href="#antes-depois" className="hover:text-yellow-400 transition-colors">Reforma de Quadros de Distribuição</a></li>
+              <li><a href="#antes-depois" className="hover:text-yellow-400 transition-colors">Reforma de Quadro de Distribuição (QDC)</a></li>
               <li><a href="#art-laudos" className="hover:text-yellow-400 transition-colors">Emissão de ART e Laudos Técnicos</a></li>
               <li><a href="#servicos" className="hover:text-yellow-400 transition-colors">Padrão de Entrada e Centros de Medição</a></li>
               <li><a href="#servicos" className="hover:text-yellow-400 transition-colors">Projetos de Iluminação e Fitas LED</a></li>

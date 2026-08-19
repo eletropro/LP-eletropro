@@ -21,14 +21,14 @@ export const ServicesGrid: React.FC = () => {
       id: 'qdc',
       icon: ShieldAlert,
       badge: 'Segurança',
-      title: 'Reforma e Modernização de Quadro (QDC)',
-      desc: 'Troca de disjuntores pretos antigos (NEMA) por padrão DIN moderno, eliminando desarmes frequentes, superaquecimento e risco de incêndio.',
+      title: 'Reforma de Quadro de Distribuição de Circuitos (QDC)',
+      desc: 'Troca de disjuntores pretos antigos (NEMA) por padrão DIN moderno Steck/Tramontina, eliminando desarmes frequentes, superaquecimento e risco de incêndio.',
       points: [
         'Instalação de DPS Clamper contra queima de eletrônicos',
         'Dispositivo DR antichoque para proteção de pessoas',
         'Barramentos blindados tipo pente em cobre'
       ],
-      cta: 'Orçar Quadro de Luz'
+      cta: 'Orçar Reforma de QDC'
     },
     {
       id: 'art-laudos',
