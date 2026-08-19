@@ -1,17 +1,10 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
-import { WallboxSection } from './components/WallboxSection';
-import { QDCBeforeAfterSection } from './components/QDCBeforeAfterSection';
-import { ArtLaudosSection } from './components/ArtLaudosSection';
 import { ServicesGrid } from './components/ServicesGrid';
-import { RealWorksGallery } from './components/RealWorksGallery';
+import { QDCBeforeAfterSection } from './components/QDCBeforeAfterSection';
+import { WallboxSection } from './components/WallboxSection';
 import { BudgetSimulator } from './components/BudgetSimulator';
 import { LocationsSection } from './components/LocationsSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -21,29 +14,27 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-['Plus_Jakarta_Sans',sans-serif] selection:bg-amber-500 selection:text-black">
-      {/* Top Header */}
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-['Plus_Jakarta_Sans',sans-serif] selection:bg-yellow-400 selection:text-black">
+      {/* Cabeçalho */}
       <Header />
 
-      {/* Main Content */}
+      {/* Conteúdo Principal Otimizado para Leads */}
       <main className="flex-1">
         <Hero />
         <TrustBar />
-        <WallboxSection />
-        <QDCBeforeAfterSection />
-        <ArtLaudosSection />
         <ServicesGrid />
-        <RealWorksGallery />
+        <QDCBeforeAfterSection />
+        <WallboxSection />
         <BudgetSimulator />
         <LocationsSection />
         <TestimonialsSection />
         <FAQSection />
       </main>
 
-      {/* Footer */}
+      {/* Rodapé */}
       <Footer />
 
-      {/* Floating Fast WhatsApp Conversion Pill */}
+      {/* Botão Flutuante de WhatsApp */}
       <FloatingWhatsApp />
     </div>
   );
